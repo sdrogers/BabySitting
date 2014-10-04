@@ -8,7 +8,7 @@
 		{% if outactivities %}
 		<ul>
 			{% for out in outactivities %}
-				<li>On {{ out.date }}, {{ out.sitting.username }} babysat for you &nbsp; [<A href="/babysittingapp/editactivity/{{ out.id}}">edit</A>][<a href="/babysittingapp/deleteactivity/{{out.id}}">delete</a>]</li>
+				<li>On {{ out.date }}, {{ out.sitting.username }} babysat for you for {{ out.cost}} credits &nbsp;[<A href="/babysittingapp/editactivity/{{ out.id}}">edit</A>][<a href="/babysittingapp/deleteactivity/{{out.id}}">delete</a>]</li>
 			{% endfor %}
 		</ul>
 		{% else %}
@@ -19,7 +19,7 @@
 		{% if sitactivities %}
 			<ul>
 				{% for sit in sitactivities %}
-					<li>On {{ sit.date }}, you babysat for {{ sit.goingout.username }} &nbsp; [<A href="/babysittingapp/editactivity/{{ sit.id}}">edit</A>][<a href="/babysittingapp/deleteactivity/{{sit.id}}">delete</a>]</li>
+					<li>On {{ sit.date }}, you babysat for {{ sit.goingout.username }} for {{ sit.cost }} credits &nbsp; [<A href="/babysittingapp/editactivity/{{ sit.id}}">edit</A>][<a href="/babysittingapp/deleteactivity/{{sit.id}}">delete</a>]</li>
 				{% endfor %}
 			</ul>
 		{% else %}
