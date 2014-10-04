@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h1>BabySitting manager</h1>
+<h2>Hi {{ user.username }}</h2>
+<p><a href="/babysittingapp/addactivity/">Add an activity</a></p>
+<p><a href="/babysittingapp/viewactivity/">View activities</a></p>
+
+<p>Your balance is {{ userprofile.balance }}</p>
+
+<p>
+<a href="/babysittingapp/logout/">logout</a>
+</p>
+<p>
+{% if allprofiles %}
+<ul>
+{% for profile in allprofiles %}
+	<li>{{ profile.user.username}}: {{ profile.balance }}</li>
+{% endfor %}
+</ul>
+Total balance is {{ total }}
+{% endif %}
+</p>
+</body>
+</html>

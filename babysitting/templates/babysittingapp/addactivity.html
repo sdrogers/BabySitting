@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BabySitting manager</title>
+</head>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+$(document).ready(function() {
+    $('.datepicker').datepicker();
+});
+</script>
+
+<body>
+<h1>Add an activity</h1>
+{% if added %}
+Activity added, <A href="/babysittingapp/">Return to homepage</A>
+{% else %}
+<strong>Add an activity</strong><br />
+<form id="activity_form" method="post" action="/babysittingapp/addactivity/" enctype="multipart/form-data">
+ {% csrf_token %}
+{{ activity_form.as_p }}
+<input type="submit" name = "submit" value="Save">
+</form>
+{% endif %}
+</body>
+</html>
